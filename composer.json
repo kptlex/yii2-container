@@ -1,0 +1,48 @@
+{
+  "name": "kptlex/container",
+  "description": "PSR-11 dependency injection container",
+  "keywords": [
+    "kptlex",
+    "dependency",
+    "injection",
+    "container",
+    "psr-11",
+    "di"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/kptlex/container/issues?state=open",
+    "source": "https://github.com/kptlex/container"
+  },
+  "authors": [
+    {
+      "name": "Alexandr Satyshev",
+      "email": "satyshev@websooby.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Lex\\Container\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Lex\\Container\\Tests\\": "tests"
+    }
+  },
+  "require": {
+    "php": "^7.4|^8.0",
+    "psr/container": "^1.0",
+    "yiisoft/yii2": "^2.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.4"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}
