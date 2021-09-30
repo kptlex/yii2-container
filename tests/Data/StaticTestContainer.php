@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Lex\Container\Tests\Data;
+namespace Lex\Yii2\Container\Tests\Data;
 
 use Psr\Container\ContainerInterface;
-use Lex\Container\NotFoundException;
+use Lex\Yii2\Container\NotFoundException;
 
 class StaticTestContainer implements ContainerInterface
 {

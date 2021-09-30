@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Lex\Container;
+namespace Lex\Yii2\Container;
 
-use InvalidArgumentException;
 use Psr\Container\NotFoundExceptionInterface;
+use yii\base\Exception;
 
-final class NotFoundException extends InvalidArgumentException implements NotFoundExceptionInterface
+final class NotFoundException extends Exception implements NotFoundExceptionInterface
 {
 }

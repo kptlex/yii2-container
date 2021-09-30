@@ -1,19 +1,19 @@
 {
-  "name": "kptlex/container",
-  "description": "PSR-11 dependency injection container",
+  "name": "kptlex/yii2-container",
+  "description": "PSR-11 dependency injection container for Yii2",
   "keywords": [
-    "kptlex",
     "dependency",
     "injection",
     "container",
     "psr-11",
-    "di"
+    "di",
+    "yii2"
   ],
   "type": "library",
   "license": "MIT",
   "support": {
-    "issues": "https://github.com/kptlex/container/issues?state=open",
-    "source": "https://github.com/kptlex/container"
+    "issues": "https://github.com/kptlex/yii2-container/issues?state=open",
+    "source": "https://github.com/kptlex/yii2-container"
   },
   "authors": [
     {
@@ -23,12 +23,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "Lex\\Container\\": "src"
+      "Lex\\Yii2\\Container\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Lex\\Container\\Tests\\": "tests"
+      "Lex\\Yii2\\Container\\Tests\\": "tests"
     }
   },
   "require": {

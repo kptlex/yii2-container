@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lex\Container;
+namespace Lex\Yii2\Container;
 
 use Exception;
 use Psr\Container\ContainerInterface;

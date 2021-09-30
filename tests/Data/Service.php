@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lex\Container\Tests\Data;
+namespace Lex\Yii2\Container\Tests\Data;
 
 use Psr\Container\ContainerInterface;
 

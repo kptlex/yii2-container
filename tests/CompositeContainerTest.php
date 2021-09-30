@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Lex\Container\Tests;
+namespace Lex\Yii2\Container\Tests;
 
-use Lex\Container\{CompositeContainer,
+use Lex\Yii2\Container\{CompositeContainer,
     NotFoundException,
     Tests\Data\Service,
     Tests\Data\StaticTestContainer,
@@ -21,40 +21,13 @@ class CompositeContainerTest extends TestCase
     public const TEST_VALUE = 10;
 
     /**
-     * @covers Lex\Container\YiiContainer
-     * @covers Lex\Container\NotFoundException
+     * @covers Lex\Yii2\Container\YiiContainer
+     * @covers Lex\Yii2\Container\NotFoundException
      */
     public function testYiiContainer(): void
     {
         $yiiContainer = $this->yiiContainer();
         $this->process($yiiContainer);
-    }
-
-    /**
-     * @covers \Container\CompositeContainer
-     * @covers \Container\YiiContainer
-     * @covers \Container\NotFoundException
-     */
-    public function testCompositeContainerYii(): void
-    {
-        $compositeContainer = new CompositeContainer();
-        $yiiContainer = $this->yiiContainer();
-        $compositeContainer->add($yiiContainer);
-        $this->process($compositeContainer);
-        $compositeContainer->remove($yiiContainer);
-        self::assertNotTrue($compositeContainer->has(Service::class));
-    }
-
-
-    /**
-     * @covers \Container\CompositeContainer
-     * @covers \Container\YiiContainer
-     * @covers \Container\NotFoundException
-     */
-    public function testCompositeContainerTwo(): void
-    {
-        $compositeContainer = $this->compositeTwoContainer();
-        $this->process($compositeContainer);
     }
 
     private function process(ContainerInterface $container): void
@@ -69,7 +42,6 @@ class CompositeContainerTest extends TestCase
             self::assertSame(get_class($exception), NotFoundException::class);
         }
     }
-
 
     private function getTestContainer($container = null): StaticTestContainer
     {

@@ -1,28 +1,20 @@
 # DI Container
 
-PSR-11 dependency injection container.
+This is a PSR-11 container that works as a link to Yii2 DI container.
 
-[![Latest Stable Version](https://poser.pugx.org/kptlex/container/v)](//packagist.org/packages/kptlex/container)
-[![Latest Unstable Version](https://poser.pugx.org/kptlex/container/v/unstable)](//packagist.org/packages/kptlex/container)
-[![Build Status](https://github.com/kptlex/container/workflows/build/badge.svg)](https://github.com/kptlex/container/actions)
-[![codecov](https://codecov.io/gh/kptlex/container/branch/main/graph/badge.svg?token=S5C6K9Y760)](https://codecov.io/gh/kptlex/container)
+[![Latest Stable Version](https://poser.pugx.org/kptlex/yii2-container/v)](//packagist.org/packages/kptlex/yii2-container)
+[![Latest Unstable Version](https://poser.pugx.org/kptlex/yii2-container/v/unstable)](//packagist.org/packages/kptlex/container)
+[![Build Status](https://github.com/kptlex/yii2-container/workflows/build/badge.svg)](https://github.com/kptlex/yii2-container/actions)
+[![codecov](https://codecov.io/gh/kptlex/yii2-container/branch/main/graph/badge.svg?token=S5C6K9Y760)](https://codecov.io/gh/kptlex/yii2-container)
 
 This repository contains two containers:
-
-1. CompositeContainer.
-
-   This is a PSR-11 container that works as a link between many other PSR-11 containers.
-
-2. YiiContainer.
-
-   This is a PSR-11 container that works as a link to Yii2 DI container.
 
 # Installation
 
 Use composer.
 
 ```
-    composer require kptlex/container
+    composer require kptlex/yii2-container
 ```
 
 # Usage
@@ -34,7 +26,7 @@ Use composer.
 ```php
 
 
-use Lex\Container\CompositeContainer;
+use Lex\Yii2\Container\CompositeContainer;
 use Psr\Container\ContainerInterface;
 
 /**
@@ -58,7 +50,7 @@ Config:
 ```php
 
 use Psr\Container\ContainerInterface; 
-use Lex\Container\YiiContainer;
+use Lex\Yii2\Container\YiiContainer;
 
 return [
     'container' => [
@@ -76,7 +68,7 @@ or Yii::$container:
 ```php
 
 use Psr\Container\ContainerInterface; 
-use Lex\Container\YiiContainer;
+use Lex\Yii2\Container\YiiContainer;
 
 Yii::$container->setDefinitions([
     ContainerInterface::class => [
