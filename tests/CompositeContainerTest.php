@@ -45,9 +45,7 @@ class CompositeContainerTest extends TestCase
         } catch (Exception $exception) {
             self::assertSame(get_class($exception), ContainerException::class);
         }
-        Yii::$container->set(ContainerInterface::class, [
-            'class' => self::class
-        ]);
+        Yii::$container->set(ContainerInterface::class, null);
         $this->expectException(ContainerException::class);
         $service->getTraitContainer();
     }
