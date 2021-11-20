@@ -20,7 +20,8 @@ class CompositeContainerTest extends TestCase
 
     /**
      * @covers Lex\Yii2\Container\YiiContainer
-     * @covers Lex\Yii2\Container\NotFoundException
+     * @covers Lex\Yii2\Container\ContainerException
+     * @covers Lex\Yii2\Container\ContainerTrait
      */
     public function testYiiContainer(): void
     {
