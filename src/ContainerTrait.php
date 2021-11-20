@@ -15,7 +15,7 @@ trait ContainerTrait
      * @return ContainerInterface
      * @throws ContainerException
      */
-    public function getContainer(): ContainerInterface
+    protected function getContainer(): ContainerInterface
     {
         try {
             return Yii::$container->get(ContainerInterface::class);

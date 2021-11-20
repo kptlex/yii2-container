@@ -26,12 +26,17 @@ class CompositeContainerTest extends TestCase
     {
         $yiiContainer = $this->yiiContainer();
         $this->process($yiiContainer);
+
+
     }
 
     private function process(ContainerInterface $container): void
     {
         self::assertTrue($container->has(Service::class));
-        self::assertNotEmpty($container->get(Service::class));
+        /** @var Service $service */
+        $service = $container->get(Service::class);
+        self::assertNotEmpty($service);
+        self::assertNotEmpty($service->getTraitContainer());
         $class = __CLASS__ . 'T';
         self::assertNotTrue($container->has($class));
         try {
@@ -39,29 +44,11 @@ class CompositeContainerTest extends TestCase
         } catch (Exception $exception) {
             self::assertSame(get_class($exception), ContainerException::class);
         }
-    }
-
-    private function getTestContainer($container = null): StaticTestContainer
-    {
-        $testContainer = new StaticTestContainer();
-        $service = new Service($container ?: $testContainer);
-        $testContainer->set($service);
-        $testContainer->set($testContainer);
-        return $testContainer;
-    }
-
-    /**
-     * @uses testCompositeContainerTwo
-     */
-    private function compositeTwoContainer(): CompositeContainer
-    {
-        $compositeContainer = new CompositeContainer();
-        $testContainer = $this->getTestContainer($compositeContainer);
-        $yiiContainer = $this->yiiContainer();
-        Yii::$container->set(ContainerInterface::class, $compositeContainer);
-        $compositeContainer->add($yiiContainer);
-        $compositeContainer->add($testContainer);
-        return $compositeContainer;
+        Yii::$container->set(ContainerInterface::class, [
+            'class' => self::class
+        ]);
+        $this->expectException(ContainerException::class);
+        $service->getTraitContainer();
     }
 
     private function yiiContainer(): YiiContainer
