@@ -15,7 +15,7 @@ final class YiiContainer implements ContainerInterface
         try {
             return Yii::$container->get($id);
         } catch (Exception $exception) {
-            throw new NotFoundException($exception->getMessage());
+            throw new ContainerException($exception->getMessage());
         }
     }
 

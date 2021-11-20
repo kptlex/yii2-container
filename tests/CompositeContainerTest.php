@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace Lex\Yii2\Container\Tests;
 
-use Lex\Yii2\Container\{CompositeContainer,
-    NotFoundException,
-    Tests\Data\Service,
-    Tests\Data\StaticTestContainer,
-    YiiContainer
-};
+use Lex\Yii2\Container\ContainerException;
+use Lex\Yii2\Container\Tests\Data\Service;
+use Lex\Yii2\Container\Tests\Data\StaticTestContainer;
+use Lex\Yii2\Container\YiiContainer;
 use Exception;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
@@ -39,7 +37,7 @@ class CompositeContainerTest extends TestCase
         try {
             $container->get($class);
         } catch (Exception $exception) {
-            self::assertSame(get_class($exception), NotFoundException::class);
+            self::assertSame(get_class($exception), ContainerException::class);
         }
     }
 
