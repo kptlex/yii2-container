@@ -5,7 +5,7 @@ This is a PSR-11 container that works as a link to Yii2 DI container.
 [![Latest Stable Version](https://poser.pugx.org/kptlex/yii2-container/v)](//packagist.org/packages/kptlex/yii2-container)
 [![Latest Unstable Version](https://poser.pugx.org/kptlex/yii2-container/v/unstable)](//packagist.org/packages/kptlex/container)
 [![Build Status](https://github.com/kptlex/yii2-container/workflows/build/badge.svg)](https://github.com/kptlex/yii2-container/actions)
-[![codecov](https://codecov.io/gh/kptlex/yii2-container/branch/main/graph/badge.svg?token=S5C6K9Y760)](https://codecov.io/gh/kptlex/yii2-container)
+[![codecov](https://codecov.io/gh/kptlex/yii2-container/branch/main/graph/badge.svg?token=8QNr91A4VZ)](https://codecov.io/gh/kptlex/yii2-container)
 
 This repository contains two containers:
 
